@@ -24,7 +24,7 @@ namespace PremiumCalculator.Services
             var ratingFactor = _repository.GetRatingForOccupation(occupation);
             
             //calculate the premium from the given formula and return
-            premium = (cover * ratingFactor * age) / 1000 * 12;
+            premium = (cover * ratingFactor * age) / (1000 * 12);
 
             return premium;
         }

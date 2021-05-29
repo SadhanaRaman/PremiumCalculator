@@ -24,13 +24,13 @@ namespace PremiumCalculator.Controllers
         /// <param name="occupation"></param>
         /// <param name="birthdate"></param>
         /// <returns></returns>
-        [HttpGet]
+        [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public double GetPremium(double cover, string occupation, DateTime birthdate)
+        public double GetPremium(double suminsured, string occupation)
         {
             //throw new NotImplementedException();
-            var premium = _premiumService.CalculatePremium(cover, occupation, birthdate);
+            var premium = _premiumService.CalculatePremium(suminsured, occupation, DateTime.Now.AddYears(-40));
             {
                 return premium;
             }
