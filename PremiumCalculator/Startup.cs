@@ -24,6 +24,7 @@ namespace PremiumCalculator
             services.AddDbContext<ApplicationDBContext>
             (options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllersWithViews();
+            services.AddAutoMapper(typeof(Mapper.Mappings));
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
