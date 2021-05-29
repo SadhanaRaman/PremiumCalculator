@@ -1,29 +1,29 @@
-USE [PremiumCalculator]
+USE [PremiumCalculatorTAL]
 GO
 
 /*Populate Ratings*/
 
-INSERT INTO [dbo].[Ratings ([Ratings],[Factor])VALUES('Professional','1')
+INSERT INTO [dbo].[Ratings] ([Rating],[Factor],[Created])VALUES('Professional','1', GETDATE())
 GO
-INSERT INTO [dbo].[Ratings ([Ratings],[Factor])VALUES('White Collar','1.25')
+INSERT INTO [dbo].[Ratings] ([Rating],[Factor],[Created])VALUES('White Collar','1.25', GETDATE())
 GO
-INSERT INTO [dbo].[Ratings ([Ratings],[Factor])VALUES('Light Manual','1.5')
+INSERT INTO [dbo].[Ratings] ([Rating],[Factor],[Created])VALUES('Light Manual','1.5', GETDATE())
 GO
-INSERT INTO [dbo].[Ratings ([Ratings],[Factor])VALUES('Heavy Manual','1.75')
+INSERT INTO [dbo].[Ratings] ([Rating],[Factor],[Created])VALUES('Heavy Manual','1.75', GETDATE())
 GO
 
 
 /*Populate Occupations*/
 
-INSERT INTO [dbo].[Occupation] ([Occupation],[RatingID]) VALUES ('Cleaner',3)
+INSERT INTO [dbo].[Occupations] ([Occupation],[RatingID],[Created]) VALUES ('Cleaner',3, GETDATE())
 GO
-INSERT INTO [dbo].[Occupation]([Occupation],[RatingID])VALUES('Doctor',1)
+INSERT INTO [dbo].[Occupations]([Occupation],[RatingID],[Created])VALUES('Doctor',1, GETDATE())
 GO
-INSERT INTO [dbo].[Occupation]([Occupation],[RatingID])VALUES('Author',2)
+INSERT INTO [dbo].[Occupations]([Occupation],[RatingID],[Created])VALUES('Author',2, GETDATE())
 GO
-INSERT INTO [dbo].[Occupation]([Occupation],[RatingID])VALUES('Farmer',4)
+INSERT INTO [dbo].[Occupations]([Occupation],[RatingID],[Created])VALUES('Farmer',4, GETDATE())
 GO
-INSERT INTO [dbo].[Occupation]([Occupation],[RatingID])VALUES('Mechanic',4)
+INSERT INTO [dbo].[Occupations]([Occupation],[RatingID],[Created])VALUES('Mechanic',4, GETDATE())
 GO
-INSERT INTO [dbo].[Occupation]([Occupation],[RatingID])VALUES('Florist',3)
+INSERT INTO [dbo].[Occupations]([Occupation],[RatingID],[Created])VALUES('Florist',3, GETDATE())
 GO
