@@ -6,6 +6,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PremiumCalculator.Data;
+using PremiumCalculator.Repository;
+using PremiumCalculator.Services;
+using PremiumCalculator.Services.Interfaces;
 
 namespace PremiumCalculator
 {
@@ -21,10 +24,13 @@ namespace PremiumCalculator
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
             services.AddDbContext<ApplicationDBContext>
             (options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllersWithViews();
             services.AddAutoMapper(typeof(Mapper.Mappings));
+            services.AddScoped<IPremiumService, PremiumService>();
+            services.AddScoped<IRepository, Repository.Repository>();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {

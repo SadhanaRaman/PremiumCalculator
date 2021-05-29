@@ -13,12 +13,13 @@ namespace PremiumCalculator.Repository
         {
             _db = db;
         }
-        public IQueryable<float> GetRatingForOccupation(string occupation)
+        public float GetRatingForOccupation(string occupation)
         {
-            return from r in _db.Ratings
+             var ratingFactor = from r in _db.Ratings
                    join o in _db.Occupations on r.RatingID equals o.RatingID
                    where o.Occupation == occupation
                    select r.Factor;
+            return ratingFactor.FirstOrDefault();
         }
     }
 }

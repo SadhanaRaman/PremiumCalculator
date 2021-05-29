@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace PremiumCalculator.Services.Interfaces
 {
-    interface IPremiumService
+    public interface IPremiumService
     {
+       double CalculatePremium(double cover, string occupation, DateTime birthdate);
     }
 }

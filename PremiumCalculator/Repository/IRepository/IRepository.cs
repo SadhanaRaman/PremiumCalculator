@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace PremiumCalculator.Repository
 {
-    interface IRepository
+    public interface IRepository
     {
-        IQueryable<float> GetRatingForOccupation(string Occupation);
+        float GetRatingForOccupation(string Occupation);
     }
 }
