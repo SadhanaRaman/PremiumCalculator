@@ -3,13 +3,13 @@ GO
 
 /*Populate Ratings*/
 
-INSERT INTO [dbo].[Ratings] ([Rating],[Factor],[Created])VALUES('Professional','1', GETDATE())
+INSERT INTO [dbo].[Ratings] ([Rating],[RatingID],[Factor],[Created])VALUES('Professional',1,'1', GETDATE())
 GO
-INSERT INTO [dbo].[Ratings] ([Rating],[Factor],[Created])VALUES('White Collar','1.25', GETDATE())
+INSERT INTO [dbo].[Ratings] ([Rating],[RatingID],[Factor],[Created])VALUES('White Collar',2,'1.25', GETDATE())
 GO
-INSERT INTO [dbo].[Ratings] ([Rating],[Factor],[Created])VALUES('Light Manual','1.5', GETDATE())
+INSERT INTO [dbo].[Ratings] ([Rating],[RatingID],[Factor],[Created])VALUES('Light Manual',3,'1.5', GETDATE())
 GO
-INSERT INTO [dbo].[Ratings] ([Rating],[Factor],[Created])VALUES('Heavy Manual','1.75', GETDATE())
+INSERT INTO [dbo].[Ratings] ([Rating],[RatingID],[Factor],[Created])VALUES('Heavy Manual',4,'1.75', GETDATE())
 GO
 
 
