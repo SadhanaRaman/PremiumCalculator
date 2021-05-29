@@ -1,4 +1,4 @@
-<form class="myForm" method="get" enctype="application/x-www-form-urlencoded" action="/html/codes/html_form_handler.cfm">
+<form class="myForm" #user="ngForm" (ngSubmit)="onSubmit(user.value)">
   <h2 class="heading">Simple Premium Calculator</h2>
 
   <p>Please Enter the below Details to view your premium:</p>
@@ -6,26 +6,26 @@
   <p>
     <label>
       Name
-      <input type="text" name="customer_name" required>
+      <input type="text" placeholder="Enter Name" name="customer_name" required>
     </label>
   </p>
 
   <p>
     <label>
       Enter Date of Birth
-      <input type="date" name="date_of_birth" required>
+      <input type="date" ngModel placeholder="Enter Date of Birth" name="date_of_birth" required>
     </label>
   </p>
   <p>
     <label>
       Sum Insured
-      <input type="text" name="sum_insured" required>
+      <input type="text" ngModel placeholder="Sum Insured" name="sum_insured" required>
     </label>
   </p>
   <p>
     <label>
       Choose Occupation
-      <select id="pickup_occupation" name="pickup_occupation">
+      <select id="pickup_occupation" ngModel name="pickup_occupation">
         <option value="" selected="selected">Select an Occupation</option>
         <option value="cleaner">Cleaner</option>
         <option value="doctor">Doctor</option>
@@ -50,6 +50,7 @@
   </ul>
   <p>The <code>ClientApp</code> subdirectory is a standard Angular CLI application. If you open a command prompt in that directory, you can run any <code>ng</code> command (e.g., <code>ng test</code>), or use <code>npm</code> to install extra packages into it.</p>-->
   <p aria-live="polite">Current count: <strong>{{ currentCount }}</strong></p>
-
-  <button class="btn btn-primary" (click)="incrementCounter()">Calculate Premium</button>
+  <p aria-live="polite">Premium: <strong>{{ premium }}</strong></p>
+  <button type="submit" class="btn btn-primary">Calculate Premium</button>
+  <button class="btn btn-primary" (click)="incrementCounter()">Test</button>
 </form>
