@@ -3,10 +3,10 @@ import { HttpClient } from '@angular/common/http';
 //import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
+  templateUrl: './premiumcalculator.component.html',
 })
 
-export class HomeComponent {
+export class PremiumCalculatorComponent {
   public currentCount = 0;
   public premium;
   Url: string;
