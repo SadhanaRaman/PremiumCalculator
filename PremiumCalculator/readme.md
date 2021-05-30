@@ -11,18 +11,20 @@ The solution takes in the following parameters to display a calculated premium o
 
 * Name
 * Date of Birth
-* Sum Insured - This is a number field where user can enter any positive integer.
+* Sum Insured - This is a number field where user can enter any positive integer. 
 * Occupation
 
 Based on the above fields, the system calculates the Age and then the premium according to the below formula.
 
 *Death Premium = (Death Cover amount * Occupation Rating Factor * Age) / (1000 * 12)*
 
+If any of the above mandatory parameters are missing for any reason, zero premium is returned.
+No minimum value for sum insured is set at this stage. The only requirement is that it is a positive integer.
 The premium is not stored anywhere currently, hence the Name of the customer is not being recorded.
 
 There are two parts to the solution, namely:
 
-* **The UI** - A simple angular form that accepts the User parameters and issues a post request to the API back end, and displays the calculated premium returned back.
+* **The UI** - A simple angular form that accepts the User parameters and issues a post request to the API back end, and displays the calculated premium returned back. Required field validations have been added to the form for the mandatory parameters.
 
 * **.Net Core API Backend** - It exposes a single endPoint: 
     * FetchPremium() - It takes in the following parameters - Date of Birth, Occupation, Suminsured and returns back the calculated Premium.
@@ -47,8 +49,8 @@ There are two tables currently in the solution. Both created in SQL through EF C
 
 ### Tests
 
-Unit tests have been added to test the CalculatePremium method of the PremiumService.
-Moq has been used to mock the dependency to the Repository for the DB calls.
+Unit tests have been added to test the CalculatePremium method of the PremiumService. The
+Moq framework has been used to mock the dependency to the Repository for the DB calls.
 Given more time, the tests would be expanded.
 
 ### Logging 
