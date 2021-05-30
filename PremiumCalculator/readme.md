@@ -45,6 +45,12 @@ There are two tables currently in the solution. Both created in SQL through EF C
 * The tables are tblOccupations and tblRatings, with RatingID as the foreign key.
 * The models used to create the tables are mapped to the DTOs using Automapper
 
+### Tests
+
+Unit tests have been added to test the CalculatePremium method of the PremiumService.
+Moq has been used to mock the dependency to the Repository for the DB calls.
+Given more time, the tests would be expanded.
+
 ### Logging 
 
 Logging happens globally using a custom exception handler and nLog to write to a file. 
