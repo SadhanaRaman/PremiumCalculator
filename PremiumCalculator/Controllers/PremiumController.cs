@@ -26,11 +26,10 @@ namespace PremiumCalculator.Controllers
         /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public double GetPremium(double suminsured, string occupation)
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public double FetchPremium(double suminsured, string occupation, DateTime birthdate)
         {
-            //throw new NotImplementedException();
-            var premium = _premiumService.CalculatePremium(suminsured, occupation, DateTime.Now.AddYears(-40));
+            var premium = _premiumService.CalculatePremium(suminsured, occupation, birthdate);
             {
                 return premium;
             }

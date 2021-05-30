@@ -1,4 +1,4 @@
-<form class="myForm" #user="ngForm" (ngSubmit)="onSubmit(user.value)">
+<form class="myForm" #customerDetails="ngForm" (ngSubmit)="onSubmit(customerDetails.value)">
   <h2 class="heading">Simple Premium Calculator</h2>
 
   <p>Please Enter the below Details to view your premium:</p>
@@ -49,8 +49,8 @@
     <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration automatically invokes <code>ng build</code> to produce minified, ahead-of-time compiled JavaScript files.</li>
   </ul>
   <p>The <code>ClientApp</code> subdirectory is a standard Angular CLI application. If you open a command prompt in that directory, you can run any <code>ng</code> command (e.g., <code>ng test</code>), or use <code>npm</code> to install extra packages into it.</p>-->
-  <p aria-live="polite">Current count: <strong>{{ currentCount }}</strong></p>
+  <!--<p aria-live="polite">Current count: <strong>{{ currentCount }}</strong></p>-->
   <p aria-live="polite">Premium: <strong>{{ premium }}</strong></p>
-  <button type="submit" class="btn btn-primary">Calculate Premium</button>
-  <button class="btn btn-primary" (click)="incrementCounter()">Test</button>
+  <button type="submit" class="btn btn-success">Calculate Premium</button>
+  <!--<button class="btn btn-primary" (click)="incrementCounter()">Test</button>-->
 </form>
