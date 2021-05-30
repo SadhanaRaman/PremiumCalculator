@@ -32,11 +32,11 @@ code {
     margin-left: 5%;
     display: block;
   }
- 
+
   .myForm input[type="text"],
   .myForm input[type="date"],
-  .myForm select
-  {
+  .myForm input[type="number"],
+  .myForm select {
     float: right;
     width: 40%;
     margin-right: 34%;
