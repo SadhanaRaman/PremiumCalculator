@@ -12,7 +12,7 @@ export class HomeComponent {
   Url: string;
 
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string)
-  { this.Url = baseUrl} //baseUrl
+  { this.Url = baseUrl} 
 
   public incrementCounter() {
     this.currentCount++;
