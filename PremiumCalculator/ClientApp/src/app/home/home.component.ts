@@ -19,7 +19,7 @@ export class HomeComponent {
   }
 
   public onSubmit(data) {
-    this.http.post(this.Url + 'api/premium' + "?suminsured=" + data.suminsured + "&occupation=" + data.occupation + "&birthdate=" + data.birthdate, data).subscribe(result => { this.premium = result; })
+    this.http.post(this.Url + 'api/premium' + "?suminsured=" + data.suminsured + "&occupation=" + data.occupation + "&birthdate=" + data.birthdate, null).subscribe(result => { this.premium = result; })
     console.warn(data.occupation);
   }
 }

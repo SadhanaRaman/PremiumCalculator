@@ -26,7 +26,7 @@ namespace PremiumCalculator.Services
             //calculate the premium from the given formula and return
             premium = (cover * ratingFactor * age) / (1000 * 12);
 
-            return premium;
+            return Math.Round(premium, 2); 
         }
 
         int GetAge (DateTime birthdate)

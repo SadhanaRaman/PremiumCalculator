@@ -24,8 +24,8 @@
   <p>
     <label>
       Choose Occupation
-      <select id="occupation" ngModel name="occupation">
-        <option value="" selected="selected">Select an Occupation</option>
+      <select id="occupation" ngModel name="occupation" required>
+        <option value="" disabled selected>Select your occupation</option>
         <option value="cleaner">Cleaner</option>
         <option value="doctor">Doctor</option>
         <option value="author">Author</option>
@@ -35,6 +35,6 @@
       </select>
     </label>
   </p>
-  <p aria-live="polite">Premium: <strong>{{ premium }}</strong></p>
+  <label>Your Premium: <strong class="premium">{{ premium }}</strong></label>
   <button type="submit" class="btn btn-success">Calculate Premium</button>
 </form>
