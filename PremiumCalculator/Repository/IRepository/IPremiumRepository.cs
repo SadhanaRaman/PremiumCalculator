@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace PremiumCalculator.Repository
 {
-    public interface IRepository
+    public interface IPremiumRepository
     {
         float GetRatingForOccupation(string Occupation);
     }

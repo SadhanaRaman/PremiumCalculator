@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace PremiumCalculator.Repository
 {
-    public class Repository : IRepository
+    public class PremiumRepository : IPremiumRepository
     {
         private readonly ApplicationDBContext _db;
-        public Repository(ApplicationDBContext db)
+        public PremiumRepository(ApplicationDBContext db)
         {
             _db = db;
         }

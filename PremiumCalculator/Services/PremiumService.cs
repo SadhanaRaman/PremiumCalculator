@@ -9,10 +9,10 @@ namespace PremiumCalculator.Services
 {
     public class PremiumService : IPremiumService
     {
-        private readonly IRepository _repository;
+        private readonly IPremiumRepository _repository;
 
         //Inject the Repository as a dependency
-        public PremiumService(IRepository repository)
+        public PremiumService(IPremiumRepository repository)
         {
             _repository = repository;
         }

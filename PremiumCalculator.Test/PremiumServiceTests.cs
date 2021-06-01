@@ -9,7 +9,7 @@ namespace PremiumCalculator.Test
     public class PremiumServiceTests
     {
        private readonly PremiumService _sut;
-        private readonly Mock<IRepository> _repoMock = new Mock<IRepository>();
+        private readonly Mock<IPremiumRepository> _repoMock = new Mock<IPremiumRepository>();
 
         public PremiumServiceTests()
         {

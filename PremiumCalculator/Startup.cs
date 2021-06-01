@@ -31,7 +31,7 @@ namespace PremiumCalculator
             services.AddControllersWithViews();
             services.AddAutoMapper(typeof(Mapper.Mappings));
             services.AddScoped<IPremiumService, PremiumService>();
-            services.AddScoped<IRepository, Repository.Repository>();
+            services.AddScoped<IPremiumRepository, Repository.PremiumRepository>();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
