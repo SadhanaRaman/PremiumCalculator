@@ -29,15 +29,15 @@ namespace PremiumCalculator.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public ActionResult<double> FetchPremium(double suminsured, string occupation, DateTime birthdate)
         {
+            //Note - In this perticular case it also makes sense to return a Specific type rather than an ActionResult, which is what I had initially.
             try
             {
                 var premium = _premiumService.CalculatePremium(suminsured, occupation, birthdate);
-               
                 return premium;
             }
             catch
             {
-                return NotFound();
+                return NotFound("Supplied Parameters were invalid");
             }
             
         }
