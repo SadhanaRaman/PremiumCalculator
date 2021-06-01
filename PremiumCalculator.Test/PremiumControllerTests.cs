@@ -28,13 +28,35 @@ namespace PremiumCalculator.Test
             //Act
 
             var result = premiumCalculator.FetchPremium(cover, occupation, birthdate);
-            var okResult = result.Result as OkObjectResult;
+            var actionResult = result.Result as OkObjectResult;
 
             //Assert 
 
-            Assert.NotNull(okResult);
-            Assert.Equal(okResult.Value, 66.67);
+            Assert.NotNull(actionResult);
+            Assert.Equal(actionResult.Value, 66.67);
         }
 
+        [Fact]
+        public void PremiumController_WhenErrorOccurs_ReturnsNotFound()
+        {
+            //Arrange
+
+            double cover = 20000;
+            string occupation = "Doctor";
+            DateTime birthdate = DateTime.Now.AddYears(-40);
+            double premium = 66.67;
+
+            _serviceMock.Setup(x => x.CalculatePremium(cover, occupation, birthdate)).Throws(new ArgumentException());
+            PremiumController premiumCalculator = new PremiumController(_serviceMock.Object);
+
+            //Act
+
+            var result = premiumCalculator.FetchPremium(cover, occupation, birthdate);
+            var actionResult = result.Result as NotFoundResult;
+
+            //Assert 
+
+            Assert.NotNull(actionResult);
+        }
     }
 }

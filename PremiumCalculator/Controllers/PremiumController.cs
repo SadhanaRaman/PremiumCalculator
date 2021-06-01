@@ -37,7 +37,7 @@ namespace PremiumCalculator.Controllers
             }
             catch
             {
-                return NotFound("Supplied Parameters were invalid");
+                return NotFound();
             }
             
         }
