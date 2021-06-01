@@ -18,9 +18,10 @@ Based on the above fields, the system calculates the Age and then the premium ac
 
 *Death Premium = (Death Cover amount * Occupation Rating Factor * Age) / (1000 * 12)*
 
-If any of the above mandatory parameters are missing for any reason, zero premium is returned.
-No minimum value for sum insured is set at this stage. The only requirement is that it is a positive integer.
-The premium is not stored anywhere currently, hence the Name of the customer is not being recorded.
+### Assumptions
+* If any of the above mandatory parameters are missing for any reason, zero premium is returned.
+* No minimum value for sum insured is set at this stage. The only requirement is that it is a positive integer.
+* The premium is not stored anywhere currently, hence the Name of the customer is not being recorded.
 
 There are two parts to the solution, namely:
 
@@ -58,8 +59,10 @@ Given more time, the tests would be expanded.
 Logging happens globally using a custom exception handler and nLog to write to a file. 
 
 ###  Comments
-I have mentioned implementation details through the code as comments.  As it stands I was only able to get started on the design, however given more time the solution could be expanded onto be able to:
+I have mentioned implementation details through the code as comments.  Given more time the solution could be expanded onto be able to:
 
 * Record each customer request on the DB (which could be potential leads).
 * Store and retrive the connection string and the premium calculation formula securly (Azure Key Valult).
-* Seperate the API and the front end into different projects, making the API reusable, Add Swagger to the API etc.
+* Seperate the API and the front end into different projects, making the API reusable.
+* Add Swagger to the API.
+* Make the form Responsive.

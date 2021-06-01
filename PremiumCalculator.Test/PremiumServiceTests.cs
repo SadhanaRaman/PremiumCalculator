@@ -8,14 +8,14 @@ namespace PremiumCalculator.Test
 {
     public class PremiumServiceTests
     {
-       private readonly PremiumService _sut;
+        private readonly PremiumService _sut;
         private readonly Mock<IPremiumRepository> _repoMock = new Mock<IPremiumRepository>();
 
         public PremiumServiceTests()
         {
             _sut = new PremiumService(_repoMock.Object);
         }
-        [Fact]
+       [Fact]
        public void CalculatePremium_ShouldReturnPremium_WhenPassedParameters()
         {
             //Arrange
