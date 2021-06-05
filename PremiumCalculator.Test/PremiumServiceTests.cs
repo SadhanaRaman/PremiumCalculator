@@ -56,5 +56,23 @@ namespace PremiumCalculator.Test
 
             Assert.Equal(premium, 0);
         }
+
+        [Fact]
+        public void CalculatePremium_ShouldReturnMinusOne_WhenBirthDateInFuture()
+        {
+            //Arrange
+
+            double cover = 20000;
+            string occupation = "Doctor";
+            DateTime birthdate = DateTime.Now.AddYears(10);
+          
+            //Act
+
+            var premium = _sut.CalculatePremium(cover, occupation, birthdate);
+
+            //Assert
+
+            Assert.Equal(premium, -1);
+        }
     }
 }
