@@ -33,13 +33,17 @@ namespace PremiumCalculator.Controllers
             try
             {
                 var premium = _premiumService.CalculatePremium(suminsured, occupation, birthdate);
-                return Ok(premium);
+             if(premium>=0)
+                {
+                    return Ok(premium);
+                }
+                return BadRequest();
             }
             catch
             {
                 return NotFound();
             }
-            
+
         }
     }
 }

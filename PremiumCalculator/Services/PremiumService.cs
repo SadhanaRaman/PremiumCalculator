@@ -20,6 +20,8 @@ namespace PremiumCalculator.Services
         {
             double premium;
             int age = GetAge(birthdate);
+            if (age <= 18)
+                return -1;
             //Get the rating factor from the database
             var ratingFactor = _repository.GetRatingForOccupation(occupation);
             

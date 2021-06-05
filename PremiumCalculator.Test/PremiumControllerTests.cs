@@ -44,7 +44,6 @@ namespace PremiumCalculator.Test
             double cover = 20000;
             string occupation = "Doctor";
             DateTime birthdate = DateTime.Now.AddYears(-40);
-            double premium = 66.67;
 
             _serviceMock.Setup(x => x.CalculatePremium(cover, occupation, birthdate)).Throws(new ArgumentException());
             PremiumController premiumCalculator = new PremiumController(_serviceMock.Object);
@@ -53,6 +52,29 @@ namespace PremiumCalculator.Test
 
             var result = premiumCalculator.FetchPremium(cover, occupation, birthdate);
             var actionResult = result.Result as NotFoundResult;
+
+            //Assert 
+
+            Assert.NotNull(actionResult);
+        }
+
+        [Fact]
+        public void PremiumController_WhenPremiumIsNegetive_ReturnsBadRequest()
+        {
+            //Arrange
+
+            double cover = 20000;
+            string occupation = "Doctor";
+            DateTime birthdate = DateTime.Now.AddYears(10);
+            double premium = -1;
+
+            _serviceMock.Setup(x => x.CalculatePremium(cover, occupation, birthdate)).Returns(premium);
+            PremiumController premiumCalculator = new PremiumController(_serviceMock.Object);
+
+            //Act
+
+            var result = premiumCalculator.FetchPremium(cover, occupation, birthdate);
+            var actionResult = result.Result as BadRequestResult;
 
             //Assert 
 
