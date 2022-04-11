@@ -4,7 +4,7 @@
 
 # Premium Calculator Solution
 
-This is a readme file for the solution design for the TAL tech challenge.
+This is a readme file for the solution design of a simple Premium Calculator.
 The solution is build with HTML with Angular front end and .Net core Web API for the backend and with SQL as the database.
 
 The solution takes in the following parameters to display a calculated premium on screen.
@@ -63,6 +63,7 @@ I have mentioned implementation details through the code as comments.  Given mor
 
 * Record each customer request on the DB (which could be potential leads).
 * Store and retrive the connection string and the premium calculation formula securly (Azure Key Valult).
+* Make an API call to the Backend from an angular service.
 * Seperate the API and the front end into different projects, making the API reusable.
-* Add Swagger to the API.
+* Add Swagger to the seperated API project.
 * Make the form Responsive.
