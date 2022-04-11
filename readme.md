@@ -52,18 +52,17 @@ There are two tables currently in the solution. Both created in SQL through EF C
 
 Unit tests have been added to test the CalculatePremium method of the PremiumService. The
 Moq framework has been used to mock the dependency to the Repository for the DB calls.
-Given more time, the tests would be expanded.
+
 
 ### Logging 
 
 Logging happens globally using a custom exception handler and nLog to write to a file. 
 
 ###  Comments
-I have mentioned implementation details through the code as comments.  Given more time the solution could be expanded onto be able to:
+I have mentioned implementation details through the code as comments.  The solution could be expanded onto be able to:
 
 * Record each customer request on the DB (which could be potential leads).
 * Store and retrive the connection string and the premium calculation formula securly (Azure Key Valult).
 * Make an API call to the Backend from an angular service.
-* Seperate the API and the front end into different projects, making the API reusable.
-* Add Swagger to the seperated API project.
+* Seperate the API and the front end into different projects, making the API reusable, add swagger.
 * Make the form Responsive.
